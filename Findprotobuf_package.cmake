@@ -21,14 +21,15 @@ CMAKE_PACKAGE_TOOLS_PLATFORM_STRING(platform_string)
 SET(version v3.17.3)
 SET(protobuf_url)
 IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
-	SET(spdlog_url
-		"https://github.com/bringauto/protobuf-package/releases/download/v1.8.5/libprotobufd-dev_${version}_${platform_string}.zip"
+	SET(protobuf_url
+		"https://github.com/bringauto/protobuf-package/releases/download/${version}/libprotobufd-dev_${version}_${platform_string}.zip"
 	)
 ELSE()
-	SET(spdlog_url
-		"https://github.com/bringauto/protobuf-package/releases/download/v1.8.5/libprotobuf-dev_${version}_${platform_string}.zip"
+	SET(protobuf_url
+		"https://github.com/bringauto/protobuf-package/releases/download/${version}/libprotobuf-dev_${version}_${platform_string}.zip"
 	)
 ENDIF()
+
 
 CMLIB_DEPENDENCY(
 	URI "${protobuf_url}"
