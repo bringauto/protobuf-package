@@ -18,14 +18,15 @@ FIND_PACKAGE(CMAKE_PACKAGE_TOOLS REQUIRED)
 SET(platform_string)
 CMAKE_PACKAGE_TOOLS_PLATFORM_STRING(platform_string)
 
+SET(version v3.17.3)
 SET(protobuf_url)
 IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
 	SET(spdlog_url
-		"https://github.com/bringauto/spdlog-package/releases/download/v1.8.5/libspdlogd-dev_v1.8.5_${platform_string}.zip"
+		"https://github.com/bringauto/protobuf-package/releases/download/v1.8.5/libprotobufd-dev_${version}_${platform_string}.zip"
 	)
 ELSE()
 	SET(spdlog_url
-		"https://github.com/bringauto/spdlog-package/releases/download/v1.8.5/libspdlog-dev_v1.8.5_${platform_string}.zip"
+		"https://github.com/bringauto/protobuf-package/releases/download/v1.8.5/libprotobuf-dev_${version}_${platform_string}.zip"
 	)
 ENDIF()
 
@@ -43,4 +44,5 @@ SET(Protobuf_ROOT "${_protobuf_ROOT}"
 
 UNSET(_protobuf_ROOT)
 UNSET(protobuf_url)
+UNSET(version)
 UNSET(platform_string)
