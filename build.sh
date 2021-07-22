@@ -28,6 +28,7 @@ build() {
 	if ! [ -d "${install_path}" ]; then
 		pushd "${build_path}"
 			git checkout v${version}
+			git submodule update --init --recursive
 			./autogen.sh
 			./configure --disable-maintainer-mode --disable-shared --prefix="${install_path}"
 			make -j 10
