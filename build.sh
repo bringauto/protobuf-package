@@ -29,9 +29,9 @@ build() {
 		pushd "${build_path}"
 			git checkout v${version}
 			git submodule update --init --recursive
-			./autogen.sh
-			./configure --disable-maintainer-mode --disable-shared --prefix="${install_path}"
-			make -j 10
+			CFLAGS="-fPIC" CXXFLAGS="-fPIC"  ./autogen.sh
+			CFLAGS="-fPIC" CXXFLAGS="-fPIC" ./configure --disable-maintainer-mode --disable-shared --prefix="${install_path}"
+			CFLAGS="-fPIC" CXXFLAGS="-fPIC" make -j 10
 			make install
 		popd
 	fi
